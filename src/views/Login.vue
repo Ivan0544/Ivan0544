@@ -47,7 +47,8 @@ export default {
           "usuario" : this.usuario,
           "password": this.password
         };
-        axios.post('http://localhost:4000/auth', json)
+        /*axios.post('http://localhost:4000/auth', json)*/
+        axios.post('https://calling-site.herokuapp.com//auth', json)
         .then( data =>{
            if(data.data.status == "ok"){
              localStorage.token = data.data.result.token;
