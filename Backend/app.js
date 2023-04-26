@@ -1,7 +1,7 @@
 let express = require("express"),
   cors = require("cors"),
   mongoose = require("mongoose"),
-  database = require("./database"),
+  database = require("./Database"),
   bodyParser = require("body-parser");
 
 // Connect mongoDB
@@ -44,7 +44,7 @@ app.use("/api", userAPI);
 // Create port
 const port = process.env.PORT || 4000;
 const server = app.listen(port, () => {
-  console.log("Connected to port " + port);
+  console.log("Initializing connection port " + port+"......");
 });
 
 // Find 404

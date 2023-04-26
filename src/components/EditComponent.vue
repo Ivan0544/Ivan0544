@@ -82,8 +82,9 @@ export default {
   methods: {
     handleUpdateForm() {
       let apiURL = `http://localhost:4000/api/update-user/${this.$route.params.id}`;
-
-      axios
+      
+      if (window.confirm("The information is correct...?")){
+        axios
         .put(apiURL, this.user)
         .then((res) => {
           console.log(res);
@@ -91,7 +92,8 @@ export default {
         })
         .catch((error) => {
           console.log(error);
-        });
+          });
+      }    
     },
   },
 };

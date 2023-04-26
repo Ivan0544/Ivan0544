@@ -1,30 +1,47 @@
+
 <template>
+  
+
   <div class="home">
+    
+    <header class="flex flex-col col-start-2 col-span-3 p-10 bg-gray-100 text-center">
+    <h1 id="title" class="mb-2 text-4xl">
+      Inicio de sesion
+    </h1>
+    <p id="description" class="text-xl font-thin">
+      Ingrese usuario y contrseña
+    </p>
+    </header>
+    
+
       <div class="wrapper fadeInDown">
-              <div id="formContent">
-                <!-- Tabs Titles -->
+        <div id="formContent">
+          <!-- Tabs Titles -->
 
-                <!-- Icon -->
-                <div class="fadeIn first">
-                  <img src="@/assets/call.jpg" id="icon" alt="User Icon" />
-                </div>
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <img src="@/assets/logo-aws2.png" id="icon" alt="User Icon" />
+          </div>
 
-                <!-- Login Form -->
-                <form v-on:submit.prevent="login">
-                  <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario" v-model="usuario">
-                  <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
-                  <input type="submit" class="fadeIn fourth" value="Ingresar">
-                </form>
+          <!-- Login Form -->
+          <form v-on:submit.prevent="login">
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario" v-model="usuario">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
+            <input type="submit" class="fadeIn fourth" value="Ingresar">
+          </form>
 
-                <!-- Remind Passowrd -->
-                <div class="alert alert-danger" role="alert" v-if="error">
-                   {{error_msg}}
-                </div>
+          <!-- Remind Passowrd -->
+          <div class="alert alert-danger" role="alert" v-if="error">
+              {{error_msg}}
+          </div>
+          
 
-              </div>
-            </div>
+        </div>
+    
+    </div>
 
   </div>
+
 </template>
 
 <script>
@@ -48,7 +65,7 @@ export default {
           "password": this.password
         };
         /*axios.post('http://localhost:4000/auth', json)*/
-        axios.post('https://calling-site.herokuapp.com//auth', json)
+        axios.post('https://localhost:4000//auth', json)
         .then( data =>{
            if(data.data.status == "ok"){
              localStorage.token = data.data.result.token;

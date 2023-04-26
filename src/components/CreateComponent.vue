@@ -1,5 +1,15 @@
 <template>
+  <div>
+    <header class="flex flex-col col-start-2 col-span-3 p-10 bg-gray-100 text-center">
+    <h1 id="title" class="mb-2 text-4xl">
+      Registro de Empleados
+    </h1>
+    <p id="description" class="text-xl font-thin">
+      Sistema de registro para control y acceso de personal
+    </p>
+    </header>
   <div class="row justify-content-center">
+
     <div class="col-md-6">
       <h3 class="text-center">Ingresar Registro</h3>
       <div>
@@ -85,6 +95,7 @@
       </form>
     </div>
   </div>
+</div>
 </template>
 
 
@@ -106,7 +117,7 @@ export default {
   methods: {
     handleSubmitForm() {
       let apiURL = "http://localhost:4000/api/create-user";
-
+      
       axios
         .post(apiURL, this.user)
         .then(() => {
@@ -122,6 +133,7 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+      
     },
   },
 };

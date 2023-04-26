@@ -53,7 +53,7 @@ export default {
   },
   created() {
     /*let apiURL = "http://localhost:4000/api";*/
-    let apiURL = "https://calling-site.herokuapp.com/api";
+    let apiURL = "http://localhost:4000/api";
     axios
       .get(apiURL)
       .then((res) => {
@@ -66,7 +66,7 @@ export default {
   methods: {
     deleteUser(id) {
       /*let apiURL = `http://localhost:4000/api/delete-user/${id}`;*/
-      let apiURL = `https://calling-site.herokuapp.com/api/delete-user/${id}`;
+      let apiURL = `http://localhost:4000/api/delete-user/${id}`;
       let indexOfArrayItem = this.users.findIndex((i) => i._id === id);
 
       if (window.confirm("Do you really want to delete?")) {

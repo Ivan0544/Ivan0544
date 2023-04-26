@@ -3,22 +3,34 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "node Backend/app.js"
   },
   "dependencies": {
+    "@volar-plugins/vetur": "^2.0.0",
+    "@vue/runtime-dom": "^3.2.47",
     "axios": "^0.21.4",
-    "body-parser": "^1.19.0",
+    "babel": "^6.23.0",
+    "body-parser": "^1.20.2",
     "bootstrap": "^5.1.1",
+    "caniuse-lite": "^1.0.30001481",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "express": "^4.17.1",
+    "firebase": "^9.20.0",
+    "firebase-admin": "^11.7.0",
+    "login": "^0.8.0",
+    "mongo": "^0.1.0",
+    "mongodb": "4.1",
     "mongoose": "^6.0.11",
     "nodemon": "^2.0.13",
     "vue": "^2.6.11",
-    "vue-router": "^3.5.2"
+    "vue-router": "^3.5.2",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -28,6 +40,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "node": "^16.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
